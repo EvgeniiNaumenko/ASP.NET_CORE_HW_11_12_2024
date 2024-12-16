@@ -24,24 +24,21 @@ namespace WebApplication1_HW_11_12_2024.Controllers
         {
             if (!ModelState.IsValid)
             {
-                // Если модель невалидна, вернуться на страницу с ошибками
                 return View(model);
             }
 
-            // Проверка уникальности имени пользователя (на стороне сервера)
             if (_context.Users.Any(u => u.Username == model.Username))
             {
                 ModelState.AddModelError("Username", "Имя пользователя уже существует.");
                 return View(model);
             }
 
-            // Сохранение пользователя в базе данных
             var user = new User
             {
                 FirstName = model.FirstName,
                 LastName = model.LastName,
                 Username = model.Username,
-                Password = model.Password, // В реальном приложении хэшируйте пароль!
+                Password = model.Password,
                 Email = model.Email,
                 PhoneNumber = model.PhoneNumber,
                 Age = model.Age,

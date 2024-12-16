@@ -1,0 +1,74 @@
+﻿@model RegisterViewModel
+
+<form asp-action="Register" asp-controller="Account" method="post">
+    <div>
+        <label>Имя:</label>
+        <input asp-for="FirstName" />
+        <span asp-validation-for="FirstName" class="text-danger"></span>
+    </div>
+
+    <div>
+        <label>Фамилия:</label>
+        <input asp-for="LastName" />
+        <span asp-validation-for="LastName" class="text-danger"></span>
+    </div>
+
+    <div>
+        <label>Имя пользователя:</label>
+        <input asp-for="Username" />
+        <span asp-validation-for="Username" class="text-danger"></span>
+    </div>
+
+    <div>
+        <label>Пароль:</label>
+        <input asp-for="Password" type="password" />
+        <span asp-validation-for="Password" class="text-danger"></span>
+    </div>
+
+    <div>
+        <label>Подтверждение пароля:</label>
+        <input asp-for="ConfirmPassword" type="password" />
+        <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
+    </div>
+
+    <div>
+        <label>Электронная почта:</label>
+        <input asp-for="Email" />
+        <span asp-validation-for="Email" class="text-danger"></span>
+    </div>
+
+    <div>
+        <label>Возраст:</label>
+        <input asp-for="Age" type="number" />
+        <span asp-validation-for="Age" class="text-danger"></span>
+    </div>
+
+    <div>
+        <label>Номер телефона:</label>
+        <input asp-for="PhoneNumber" />
+        <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+    </div>
+
+    <div>
+        <label>Номер кредитной карты:</label>
+        <input asp-for="CreditCardNumber" />
+        <span asp-validation-for="CreditCardNumber" class="text-danger"></span>
+    </div>
+
+    <div>
+        <label>Веб-сайт:</label>
+        <input asp-for="Website" />
+        <span asp-validation-for="Website" class="text-danger"></span>
+    </div>
+
+    <div>
+        <input asp-for="TermsOfService" type="checkbox" />
+        <label>Я принимаю условия соглашения</label>
+    </div>
+
+    <button type="submit">Зарегистрироваться</button>
+</form>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
